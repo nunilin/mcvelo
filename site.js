@@ -7,46 +7,69 @@ var soundButton = document.getElementById("soundButton");
 var writeButton = document.getElementById("writeButton");
 var shareButton = document.getElementById("shareButton");
 
-var text1 = document.getElementById("text1");
-var text2 = document.getElementById("text2");
-var text3 = document.getElementById("text3");
-var text4 = document.getElementById("text4");
-var text5 = document.getElementById("text5");
-var text6 = document.getElementById("text6");
-//var graph = document.getElementById("graph");
+var graph = document.getElementById("graph");
 
 var responseText = document.getElementById("responseText");
-var graph = document.getElementById("graph");
+responseText.textContent = "choose a verb and click it";
 
 var space0 = "images/empty.png";
 var place;
 
 // Store as JSON
-var graphics = ["images/graphic_1.png","images/graphic_2.png","images/graphic_3.png","images/graphic_4.png","images/graphic_5.png","images/graphic_6.png"];
-var paints = ["images/painting_1.png","images/painting_2.png","images/painting_3.png","images/painting_4.png","images/painting_5.png","images/painting_6.png"];
-var shares = ["graphics/ck_icon.png","graphics/sharefund_icon.png","graphics/kohilabs.com-orange-circle-150.png","graphics/ORACLE-Logo.jpg","graphics/teamcaletti_brand.png","images/empty.png"];
+var buttonLabels = ["shoot","draw","make","graph","paint","play","write","share"];
+
+var local_graphics = [{"image":"images/graphic_1.png","text":"Mother\'s Day 2013","link":"httpyahoocom"},
+                      {"image":"images/graphic_2.png","text":"Spoke Calculator","link":"httpgooglecom"},
+                      {"image":"images/graphic_3.png","text":"French Press","link":"httpgooglecom"},
+                      {"image":"images/graphic_4.png","text":"Coffee Brew Timer","link":"httpgooglecom"},
+                      {"image":"images/graphic_5.png","text":"Risk Reward Model","link":"httpgooglecom"},
+                      {"image":"images/graphic_6.png","text":"Icons","link":"httpgooglecom"}];
+
+var local_paintings = [{"image":"images/painting_1.png","text":"The Road","link":""},
+                       {"image":"images/painting_2.png","text":"Bird #1","link":""},
+                       {"image":"images/painting_3.png","text":"Bird #2","link":""},
+                       {"image":"images/painting_4.png","text":"San Fancisco","link":""},
+                       {"image":"images/painting_5.png","text":"Brief History","link":""},
+                       {"image":"images/painting_6.png","text":"The Fly","link":""}];
+
+var local_drawings = [{"image":"images/drawing_1.png","text":"Freud Thinks","link":""},
+                      {"image":"images/drawing_2.png","text":"Cycle Abstraction #1","link":""},
+                      {"image":"images/drawing_3.png","text":"Vroom","link":""},
+                      {"image":"images/saylovehearhate.png","text":"saylovehearhate","link":""},
+                      {"image":"images/cyclosaurus.png","text":"Cycle Abstraction #2","link":""},
+                      {"image":"images/empty.png","text":"","link":""}];
+
+var local_shares = [{"image":"graphics/ck_icon.png","text":"Clients","link":""},
+                    {"image":"graphics/sf_logo.png","text":"Co-Founder","link":""},
+                    {"image":"graphics/kohilabs.com-orange-circle-150.png","text":"Partner","link":""},
+                    {"image":"graphics/teamcaletti_brand.png","text":"Racing Team","link":""},
+                    {"image":"graphics/ORACLE-Logo.jpg","text":"Ex-Employee","link":""},
+                    {"image":"graphics/220px-Ucdavis_aggies.png","text":"Alumnus","link":""}];
+
+
+var local_photos = [{"image":"","text":"","link":""}];
+
+
+
+var shares = ["graphics/ck_icon.png","graphics/sf_logo.png","graphics/kohilabs.com-orange-circle-150.png","graphics/teamcaletti_brand.png","graphics/ORACLE-Logo.jpg","graphics/220px-Ucdavis_aggies.png"];
 var photos = ["images/photo_1.png","images/photo_2.png","images/photo_3.png","images/empty.png","images/empty.png","images/empty.png"];
-var draws = ["images/drawing_1.png","images/drawing_2.png","images/drawing_3.png","images/empty.png","images/empty.png","images/empty.png"];
+var structures = ["images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png"];
+var sounds = ["images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png"];
+
+var shootText = ["Central Valley", "Sequoia Foothiils", "Springville", "Image 4", "Image 5", "Image 6"];
+var makeText = ["Object 1", "Object 2", "Object 3", "Object 4", "Object 5", "Object 6"];
+var playText = ["Sound 1", "Sound 2", "Sound 3", "Sound 4", "Sound 5", "Sound 6"];
+var writeText = ["PL/SQL","Objective-C","JavaScript","CSS","HTML","English"];
+var shareText = ["Clients","Co-Founder","Partner","Team Member","Former Employee","Alumni"];
 // Done Store as JSON
 
-responseText.textContent = "choose a verb and click it";
-
-document.getElementById('image1').src = paints[1];
-document.getElementById('image2').src = paints[3];
-document.getElementById('image3').src = graphics[2];
-document.getElementById('image4').src = graphics[0];
+document.getElementById('image1').src = local_paintings[1].image;
+document.getElementById('image2').src = local_paintings[3].image;
+document.getElementById('image3').src = local_graphics[2].image;
+document.getElementById('image4').src = local_graphics[0].image;
 document.getElementById('image5').src = photos[2];
-document.getElementById('image6').src = graphics[5];
-
-var shootText = ["Image 1", "Image 2", "Image 3", "Image 4", "Image 5", "Image 6"];
-var drawText = ["Draw 1", "Draw 2", "Draw 3", "Draw 4", "Draw 5", "Draw 6"];
-var makeText = ["Object 1", "Object 2", "Object 3", "Object 4", "Object 5", "Object 6"];
-var graphText = ["Graphic 1", "Graphic 2", "Graphic 3", "Graphic 4", "Graphic 5", "Graphic 6"];
-var paintText = ["Paint 1", "Paint 2", "Paint 3", "Paint 4", "Paint 5", "Paint 6"];
-var playText = ["Sound 1", "Sound 2", "Sound 3", "Sound 4", "Sound 5", "Sound 6"];
-
-var writeText = ["PL/SQL","Objective-C","JavaScript","CSS","HTML","English"];
-
+document.getElementById('image6').src = local_graphics[5].image;
+                 
 var buttonObs = {shoot: "digital time traps",
                   draw: "manual cranial output",
                   make: "spacial occupation",
@@ -54,7 +77,7 @@ var buttonObs = {shoot: "digital time traps",
                  paint: "planar escapism",
                   play: "aural hors d'ouvres",
                  write: "structured little symbols",
-                 share: "elaborate idea maps"};
+                 share: "neural cornucopias"};
 
 function setButton(clicked) {
     var write = 0, shoot = 0, draw = 0, paint = 0, play = 0, make = 0, graph = 0, share = 0;
@@ -106,17 +129,16 @@ function doPhoto() {
     setResponse("shoot");
     photoButton.style.borderWidth = "2px";
 	responseText.textContent = buttonObs.shoot;
-    text1.textContent = shootText[0];
-	text2.textContent = shootText[1];
-	text3.textContent = shootText[0];
-	text4.textContent = shootText[1];
-    text5.textContent = shootText[0];
-	text6.textContent = shootText[1];
+    var text_string;
+    for (var i = 0; i < shootText.length; i++)
+    {
+        text_string = 'text'+(i+1);
+        document.getElementById(text_string).textContent = shootText[i];
+    }
     var image_string;
     for (var i = 0; i < photos.length; i++)
     { 
         image_string = 'image'+(i+1);
-        log(image_string);
         //document.write(cars[i] + "<br>");
         document.getElementById(image_string).src = photos[i];
     }
@@ -127,15 +149,17 @@ function doDrawing() {
     setGraph();
     setResponse("draw");
 	responseText.textContent = buttonObs.draw;
+    
+    var text_string;
     var image_string;
-    for (var i = 0; i < draws.length; i++)
-    { 
+    
+    for (var i = 0; i < local_drawings.length; i++)
+    {
+        text_string = 'text'+(i+1);
         image_string = 'image'+(i+1);
-        log(image_string);
-        //document.write(cars[i] + "<br>");
-        document.getElementById(image_string).src = draws[i];
+        document.getElementById(text_string).textContent = local_drawings[i].text;
+        document.getElementById(image_string).src = local_drawings[i].image;
     }
-
 }
 
 function doStructure() {
@@ -143,6 +167,14 @@ function doStructure() {
     setGraph();
     setResponse("make");
 	responseText.textContent = buttonObs.make;
+    
+    var text_string;
+    for (var i = 0; i < makeText.length; i++)
+    {
+        text_string = 'text'+(i+1);
+        document.getElementById(text_string).textContent = makeText[i];
+    }
+    
 	document.getElementById('image1').src = space0;
     document.getElementById('image2').src = space0;
     document.getElementById('image3').src = space0;
@@ -156,13 +188,17 @@ function doGraphical() {
     setGraph();
     setResponse("graph");
 	responseText.textContent = buttonObs.graph;
+    
+    var text_string;
     var image_string;
-    for (var i = 0; i < graphics.length; i++)
-    { 
+    
+    for (var i = 0; i < local_graphics.length; i++)
+    {
+        text_string = 'text'+(i+1);
         image_string = 'image'+(i+1);
-        log(image_string);
-        //document.write(cars[i] + "<br>");
-        document.getElementById(image_string).src = graphics[i];
+
+        document.getElementById(text_string).textContent = local_graphics[i].text;
+        document.getElementById(image_string).src = local_graphics[i].image;
     }
 }
 
@@ -170,20 +206,18 @@ function doPaint() {
     setButton("paint");
     setGraph();
     setResponse("paint");
-    text1.textContent = paintText[0];
-	text2.textContent = paintText[1];
-	text3.textContent = paintText[0];
-	text4.textContent = paintText[1];
-    text5.textContent = paintText[0];
-	text6.textContent = paintText[1];
-	responseText.textContent = buttonObs.paint;
+    responseText.textContent = buttonObs.paint;
+    
+    var text_string;
     var image_string;
-    for (var i = 0; i < paints.length; i++)
-    { 
+    
+    for (var i = 0; i < local_paintings.length; i++)
+    {
+        text_string = 'text'+(i+1);
         image_string = 'image'+(i+1);
-        log(image_string);
-        //document.write(cars[i] + "<br>");
-        document.getElementById(image_string).src = paints[i];
+
+        document.getElementById(text_string).textContent = local_paintings[i].text;
+        document.getElementById(image_string).src = local_paintings[i].image;
     }
 }
 
@@ -191,39 +225,41 @@ function doSound() {
     setButton("play");
     setGraph();
     setResponse("play");
-	text1.textContent = playText[0];
-	text2.textContent = playText[1];
-	text3.textContent = playText[0];
-	text4.textContent = playText[1];
-    text5.textContent = playText[0];
-	text6.textContent = playText[1];
+    var text_string;
+    for (var i = 0; i < playText.length; i++)
+    {
+        text_string = 'text'+(i+1);
+        document.getElementById(text_string).textContent = playText[i];
+    }
     responseText.textContent = buttonObs.play;
-	document.getElementById('image1').src = space0;
-    document.getElementById('image2').src = space0;
-    document.getElementById('image3').src = space0;
-    document.getElementById('image4').src = space0;
-    document.getElementById('image5').src = space0;
-    document.getElementById('image6').src = space0;
+    var image_string;
+    for (var i = 0; i < sounds.length; i++)
+    { 
+        image_string = 'image'+(i+1);
+        //document.write(cars[i] + "<br>");
+        document.getElementById(image_string).src = sounds[i];
+    }
 }
 
     function doWrite() {
     setButton("write");
     setGraph();
     setResponse("write");
-	text1.textContent = writeText[0];
-	text2.textContent = writeText[1];
-	text3.textContent = writeText[2];
-	text4.textContent = writeText[3];
-    text5.textContent = writeText[4];
-	text6.textContent = writeText[5];
+    var text_string;
+    for (var i = 0; i < writeText.length; i++)
+    {
+       text_string = 'text'+(i+1);
+       document.getElementById(text_string).textContent = writeText[i];
+    }
     responseText.textContent = buttonObs.write;
 	//responseText.style.left = "400px";
-	document.getElementById('image1').src = space0;
-    document.getElementById('image2').src = space0;
-    document.getElementById('image3').src = space0;
-    document.getElementById('image4').src = space0;
-    document.getElementById('image5').src = space0;
-    document.getElementById('image6').src = space0;
+    var image_string;
+    for (var i = 0; i < sounds.length; i++)
+    { 
+        image_string = 'image'+(i+1);
+        //document.write(cars[i] + "<br>");
+        document.getElementById(image_string).src = sounds[i];
+    }
 }
 
 
@@ -231,28 +267,19 @@ function doShare() {
     setButton("share");
     setGraph();
     setResponse("share");
-	text1.textContent = shootText[0];
-	text2.textContent = shootText[1];
-	text3.textContent = shootText[0];
-	text4.textContent = shootText[1];
-    text5.textContent = shootText[0];
-	text6.textContent = shootText[1];
     responseText.textContent = buttonObs.share;
-	//responseText.style.left = "400px";
-    var image_string;
-    for (var i = 0; i < shares.length; i++)
-    { 
-        image_string = 'image'+(i+1);
-        log(image_string);
-        //document.write(cars[i] + "<br>");
-        document.getElementById(image_string).src = shares[i];
-    }
-}
 
-function log(msg) {
-    setTimeout(function() {
-        throw new Error(msg);
-    }, 0);
+    var text_string;
+    var image_string;
+
+    for (var i = 0; i < local_shares.length; i++)
+    {
+        text_string = 'text'+(i+1);
+        image_string = 'image'+(i+1);
+        document.getElementById(text_string).textContent = local_shares[i].text;
+        document.getElementById(image_string).src = local_shares[i].image;
+    }
+    
 }
 
 photoButton.addEventListener('click', doPhoto, false);
