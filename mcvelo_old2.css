@@ -1,0 +1,196 @@
+/* This is the CSS for the MCVELO portfolio */
+
+/* This layout is not reponsive */
+
+/* Set the page width and orientation */
+
+A {
+    text-decoration: none;
+    color: black;
+}
+
+#main {
+    border: 0px;
+    margin: 0 auto;
+    text-align: center;
+    width:1200px;
+}
+#header {
+    border: 0px;
+    margin-left:150px;
+    text-align: center;
+    width:900px;
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+#middle {
+    border: 0px;
+    margin-top: 110px;
+    margin-left: 150px;
+    text-align: center;
+    width:900px;
+    height: auto;
+}
+#footer {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    margin-left:150px;
+    text-align: center;
+    width:900px;
+    position: fixed;
+    bottom: 10px;
+    background-color: white;
+}
+#brand {
+    float: left;
+    border: 0px solid skyblue;
+    width:200px;
+    height:90px;
+    text-align: center;
+    font-family: helvetica;
+    font-size: 48pt; 
+    line-height: 88pt;
+    z-index:6;
+    background-color: white;
+}
+#tabs {
+    margin-left: 200px;
+    border: 0px;
+    text-align: center;
+    width:612px;
+    height:86px;
+    background: white;
+}
+#subHeader {
+    border: 0px;
+    margin-left:150px;
+    text-align: center;
+    width:896px;
+    position: fixed;
+    top: 92px;
+    background-color: white;
+}
+#topLine {
+    border: 1px solid black;
+    width:1200px;
+    position: fixed;
+    top: 90px;
+    background-color: white;
+}
+#void {
+    float: left;
+    border: 0px;
+    text-align: center;
+    width:200px;
+}
+#response {
+    margin-left: 200px;
+    border-top: 0px;
+    border-left:2px solid black;
+    border-bottom:2px solid black;
+    text-align: left;
+    font-family: helvetica;
+    font-size: 10pt;
+    line-height: 20px;
+    text-indent: 15px;
+    width:850px;
+    background-color: white;
+    color: grey;
+}
+#navigate {
+    float: left;
+    position: fixed;
+    border: 0px;
+    text-align: center;
+    width:200px;
+    font-family: helvetica;
+    color: grey;
+    line-height: 30px;
+}
+
+#navLabels {
+    border: 2px solid grey;
+    width: 150px;
+    margin-left: 13px;
+    text-align: center;
+    height: 40px;
+}
+#leftContent {
+    float: left;
+    margin-left: 200px;
+    border: 0px;
+    text-align: center;
+    width:300px;
+}
+#rightContent {
+    margin-left: 500px;
+    border: 0px;
+    text-align: center;
+    width:300px;
+}
+#baseline {
+    border: 10px solid white;
+    width:1200px;
+    position: fixed;
+    bottom: 0px;
+}
+#attribute {
+    float: left;
+    border: 0px;
+    text-align: center;
+    line-height: 30pt;    	
+    font-family:helvetica;
+    font-size: 10pt;
+    width:300px;
+}
+#version {
+    margin: 0 auto;
+    border: 0px;
+    text-align: center;
+    line-height: 30pt;
+	font-family:helvetica;
+    font-size: 10pt;
+    width:300px;
+}
+#copyright {
+    float: right;
+    border: 0px;
+    text-align: center;
+    line-height: 30pt;
+	font-family:helvetica;
+    font-size: 10pt;
+    width:300px;
+}
+.buttonStyle {
+	background-color:#ffffff;
+    border-top: 0px;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	display:inline-block;
+	color:MidnightBlue;
+	font-family:helvetica;
+	font-size:14px;
+	padding:5px 15px;
+	text-decoration:none;
+	margin-right:10px;
+	margin-left:0px;
+    margin-top:64px;
+}
+.buttonStyle:hover {
+	background-color:#e8e8e8;
+    border-top: 0px;
+	border-left-width:2px;
+	border-right-width:2px;
+	border-bottom-width:2px;
+}
+.buttonStyle:active {
+	position:relative;
+	background-color:#c9c9c9;
+    border-top: 0px;
+	border-left-width:2px;
+	border-right-width:2px;
+	border-bottom-width:2px;
+}

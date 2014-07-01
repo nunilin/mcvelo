@@ -9,66 +9,95 @@ var shareButton = document.getElementById("shareButton");
 
 var graph = document.getElementById("graph");
 
+var brandText = document.getElementById("brandText");
 var responseText = document.getElementById("responseText");
-responseText.textContent = "choose a verb and click it";
+var attributeText = document.getElementById("attributeText");
+var copyRightText = document.getElementById("copyRightText");
+
+brandText.textContent = "mc";
+responseText.textContent = "choose a verb";
+attributeText.textContent = "Designed by KoHi Labs, LLC";
+copyRightText.textContent = "Copyright 2014, Matthew Carlson";
 
 var space0 = "images/empty.png";
-var place;
+var place = "100px";
 
 // Store as JSON
 var buttonLabels = ["shoot","draw","make","graph","paint","play","write","share"];
 
-var local_graphics = [{"image":"images/graphic_1.png","text":"Mother\'s Day 2013","link":"httpyahoocom"},
-                      {"image":"images/graphic_2.png","text":"Spoke Calculator","link":"httpgooglecom"},
-                      {"image":"images/graphic_3.png","text":"French Press","link":"httpgooglecom"},
-                      {"image":"images/graphic_4.png","text":"Coffee Brew Timer","link":"httpgooglecom"},
-                      {"image":"images/graphic_5.png","text":"Risk Reward Model","link":"httpgooglecom"},
-                      {"image":"images/graphic_6.png","text":"Icons","link":"httpgooglecom"}];
+var local_graphics = [{"image":"images/graphic_3.png","text":"French","link":"httpyahoocom"},
+                      {"image":"images/graphic_2.png","text":"Spoke","link":"httpgooglecom"},
+                      {"image":"images/graphic_1.png","text":"Mom","link":"httpgooglecom"},
+                      {"image":"images/graphic_4.png","text":"Coffee","link":"httpgooglecom"},
+                      {"image":"images/graphic_5.png","text":"Risk","link":"httpgooglecom"},
+                      {"image":"images/graphic_6.png","text":"Icon","link":"httpgooglecom"}];
 
-var local_paintings = [{"image":"images/painting_1.png","text":"The Road","link":""},
-                       {"image":"images/painting_2.png","text":"Bird #1","link":""},
-                       {"image":"images/painting_3.png","text":"Bird #2","link":""},
-                       {"image":"images/painting_4.png","text":"San Fancisco","link":""},
+var local_paintings = [{"image":"images/painting_2.png","text":"Bird #1","link":""},
+                       {"image":"images/painting_1.png","text":"The Road","link":""},
+                       {"image":"images/painting_4.png","text":"San Francisco","link":""},
                        {"image":"images/painting_5.png","text":"Brief History","link":""},
+                       {"image":"images/painting_3.png","text":"Bird #2","link":""},
                        {"image":"images/painting_6.png","text":"The Fly","link":""}];
 
-var local_drawings = [{"image":"images/drawing_1.png","text":"Freud Thinks","link":""},
-                      {"image":"images/drawing_2.png","text":"Cycle Abstraction #1","link":""},
-                      {"image":"images/drawing_3.png","text":"Vroom","link":""},
-                      {"image":"images/saylovehearhate.png","text":"saylovehearhate","link":""},
-                      {"image":"images/cyclosaurus.png","text":"Cycle Abstraction #2","link":""},
-                      {"image":"images/empty.png","text":"","link":""}];
+var local_makes =     [{"image":"images/Bike_Lane.png","text":"Table","link":""},
+                       {"image":"images/Dolly.png","text":"Dolly","link":""},
+                       {"image":"images/Mask.png","text":"Mask","link":""},
+                       {"image":"images/Roast.png","text":"Roast","link":""},
+                       {"image":"images/shelve.png","text":"Shelf","link":""},
+                       {"image":"images/TT2Orange.png","text":"Frame","link":""}];
 
-var local_shares = [{"image":"graphics/ck_icon.png","text":"Clients","link":""},
-                    {"image":"graphics/sf_logo.png","text":"Co-Founder","link":""},
+var local_drawings = [{"image":"images/drawing_1.png","text":"Freud Thinks","link":""},
+                      {"image":"images/drawing_3.png","text":"Vroom","link":""},
+                      {"image":"images/cyclosaurus.png","text":"Cycle Abstraction #2","link":""},
+                      {"image":"images/saylovehearhate.png","text":"saylovehearhate","link":""},
+                      {"image":"images/drawing_2.png","text":"Cycle Abstraction #1","link":""},
+                      {"image":"images/empty.png","text":"none","link":""}];
+
+var local_shares = [{"image":"graphics/ck_icon.png","text":"Developer","link":""},
+                    {"image":"graphics/sf_logo.png","text":"Architect","link":""},
                     {"image":"graphics/kohilabs.com-orange-circle-150.png","text":"Partner","link":""},
-                    {"image":"graphics/teamcaletti_brand.png","text":"Racing Team","link":""},
-                    {"image":"graphics/ORACLE-Logo.jpg","text":"Ex-Employee","link":""},
+                    {"image":"graphics/teamcaletti_brand.png","text":"Team","link":""},
+                    {"image":"graphics/ORACLE-Logo.jpg","text":"Employee","link":""},
                     {"image":"graphics/220px-Ucdavis_aggies.png","text":"Alumnus","link":""}];
 
 
-var local_photos = [{"image":"","text":"","link":""}];
+var local_photos = [{"image":"images/photo_3.png","text":"Valley","link":""},
+                    {"image":"images/disco.png","text":"Disco","link":""},
+                    {"image":"images/road.png","text":"Night","link":""},
+                    {"image":"images/zoo.jpg","text":"Zoo","link":""},
+                    {"image":"images/face.png","text":"Face","link":""},
+                    {"image":"images/lamb.png","text":"Bell","link":""}];
+
+var local_writes = [{"image":"images/html.png","text":"html","link":""},
+                    {"image":"images/english.png","text":"english","link":""},
+                    {"image":"images/js.png","text":"javascript","link":""},
+                    {"image":"images/obj-c.png","text":"cocoa","link":""},
+                    {"image":"images/css.png","text":"style","link":""},
+                    {"image":"images/empty.png","text":"none","link":""}];
 
 
 
-var shares = ["graphics/ck_icon.png","graphics/sf_logo.png","graphics/kohilabs.com-orange-circle-150.png","graphics/teamcaletti_brand.png","graphics/ORACLE-Logo.jpg","graphics/220px-Ucdavis_aggies.png"];
-var photos = ["images/photo_1.png","images/photo_2.png","images/photo_3.png","images/empty.png","images/empty.png","images/empty.png"];
-var structures = ["images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png"];
+//var structures = ["images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png"];
 var sounds = ["images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png","images/empty.png"];
 
-var shootText = ["Central Valley", "Sequoia Foothiils", "Springville", "Image 4", "Image 5", "Image 6"];
-var makeText = ["Object 1", "Object 2", "Object 3", "Object 4", "Object 5", "Object 6"];
+//var makeText = ["Object 1", "Object 2", "Object 3", "Object 4", "Object 5", "Object 6"];
 var playText = ["Sound 1", "Sound 2", "Sound 3", "Sound 4", "Sound 5", "Sound 6"];
-var writeText = ["PL/SQL","Objective-C","JavaScript","CSS","HTML","English"];
-var shareText = ["Clients","Co-Founder","Partner","Team Member","Former Employee","Alumni"];
+//var writeText = ["PL/SQL","Objective-C","JavaScript","CSS","HTML","English"];
 // Done Store as JSON
 
 document.getElementById('image1').src = local_paintings[1].image;
-document.getElementById('image2').src = local_paintings[3].image;
-document.getElementById('image3').src = local_graphics[2].image;
+document.getElementById('image2').src = local_photos[2].image;
+document.getElementById('image3').src = local_drawings[3].image;
 document.getElementById('image4').src = local_graphics[0].image;
-document.getElementById('image5').src = photos[2];
+document.getElementById('image5').src = local_writes[2].image;
 document.getElementById('image6').src = local_graphics[5].image;
+
+document.getElementById('text1').textContent = local_paintings[1].text;
+document.getElementById('text2').textContent = local_photos[2].text;
+document.getElementById('text3').textContent = local_drawings[3].text;
+document.getElementById('text4').textContent = local_graphics[0].text;
+document.getElementById('text5').textContent = local_writes[2].text;
+document.getElementById('text6').textContent = local_graphics[5].text;
                  
 var buttonObs = {shoot: "digital time traps",
                   draw: "manual cranial output",
@@ -104,7 +133,7 @@ function setButton(clicked) {
 
 function setGraph()
 {
-    graph.style.borderRightWidth = place;
+    graph.style.width = place;
 }
 
 function setResponse(clicked)
@@ -127,20 +156,17 @@ function doPhoto() {
     setButton("shoot");
     setGraph();
     setResponse("shoot");
-    photoButton.style.borderWidth = "2px";
+    //photoButton.style.borderWidth = "2px";
 	responseText.textContent = buttonObs.shoot;
     var text_string;
-    for (var i = 0; i < shootText.length; i++)
+    var image_string;
+    
+    for (var i = 0; i < local_photos.length; i++)
     {
         text_string = 'text'+(i+1);
-        document.getElementById(text_string).textContent = shootText[i];
-    }
-    var image_string;
-    for (var i = 0; i < photos.length; i++)
-    { 
         image_string = 'image'+(i+1);
-        //document.write(cars[i] + "<br>");
-        document.getElementById(image_string).src = photos[i];
+        document.getElementById(text_string).textContent = local_photos[i].text;
+        document.getElementById(image_string).src = local_photos[i].image;
     }
 }
 
@@ -169,18 +195,16 @@ function doStructure() {
 	responseText.textContent = buttonObs.make;
     
     var text_string;
-    for (var i = 0; i < makeText.length; i++)
+    var text_string;
+    var image_string;
+    
+    for (var i = 0; i < local_makes.length; i++)
     {
         text_string = 'text'+(i+1);
-        document.getElementById(text_string).textContent = makeText[i];
+        image_string = 'image'+(i+1);
+        document.getElementById(text_string).textContent = local_makes[i].text;
+        document.getElementById(image_string).src = local_makes[i].image;
     }
-    
-	document.getElementById('image1').src = space0;
-    document.getElementById('image2').src = space0;
-    document.getElementById('image3').src = space0;
-    document.getElementById('image4').src = space0;
-    document.getElementById('image5').src = space0;
-    document.getElementById('image6').src = space0;
 }
 
 function doGraphical() {
@@ -245,21 +269,19 @@ function doSound() {
     setButton("write");
     setGraph();
     setResponse("write");
+    responseText.textContent = buttonObs.write;
+            
     var text_string;
-    for (var i = 0; i < writeText.length; i++)
+    var image_string;
+        
+    for (var i = 0; i < local_writes.length; i++)
     {
        text_string = 'text'+(i+1);
-       document.getElementById(text_string).textContent = writeText[i];
+       image_string = 'image'+(i+1);
+       document.getElementById(text_string).textContent = local_writes[i].text;
+       document.getElementById(image_string).src = local_writes[i].image;
     }
-    responseText.textContent = buttonObs.write;
-	//responseText.style.left = "400px";
-    var image_string;
-    for (var i = 0; i < sounds.length; i++)
-    { 
-        image_string = 'image'+(i+1);
-        //document.write(cars[i] + "<br>");
-        document.getElementById(image_string).src = sounds[i];
-    }
+
 }
 
 
@@ -281,6 +303,7 @@ function doShare() {
     }
     
 }
+
 
 photoButton.addEventListener('click', doPhoto, false);
 drawingButton.addEventListener('click', doDrawing, false);

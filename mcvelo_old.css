@@ -1,0 +1,272 @@
+p           {
+                font-family:helvetica; 
+                font-style:normal; 
+                color:#000000;
+                size:10pt;
+            }
+
+td.left     {
+                text-align: left;
+            }
+
+td.right     {
+                text-align: right;
+            }
+td.standard_text  {
+                        width:184px;
+                        height:16px;
+                        margin-left: 10px;
+                        vertical-align: text-top;
+                        text-align: center;
+                        align-content: center;
+                    }
+
+td.standard_image  {
+                        width:300px;
+                        text-align: center;
+                        align-content: center;
+                        vertical-align: top;
+                    }
+            
+a:link {text-decoration:none}
+
+#main   {
+            width: 900px;
+            height: 120px;
+            border: 1px solid skyblue;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 0px;
+            
+        }
+
+#header     {
+                width:1200px;
+                height:120px;
+                top:0px;
+                left:0px;
+                margin: 0 auto;
+                text-align: center;
+                border: 1px solid skyblue;
+                background-color:white;
+
+                z-index:5;
+            } 
+
+#brand      {
+                vertical-align:text-top;
+                text-align:center;
+                font-family:helvetica; 
+                font-style:normal;
+                color:#000000;
+                line-height:0px;
+                background-color:white;
+                top:0px;
+                left:0px;
+                width:200px;
+                height:100px;
+                z-index:6;
+            }
+
+#buttons    {
+                position: relative;
+                top:-100px;
+                left:0px;
+                z-index:10;
+            }
+            
+#content    {
+                left:0px;
+                margin: 0 auto;
+                top:119px;
+                left:9px;
+                width:1200px;
+                height:1400px;
+                margin-bottom:10px;
+                background-color:#ffffff;
+                z-index:1;
+            }
+
+
+#footer     {
+                position:fixed;
+                bottom:0px;
+                height:70px;
+                width:100%;
+                background-color:white;
+                border:2px solid;
+                border-color:Crimson;
+                border-top-width:2px;
+                border-left-width:0px;
+                border-bottom-width:0px;
+                border-right-width:0px;
+                left:0px;
+                z-index:5;
+                
+            }
+
+.sloganText   {
+                vertical-align:top;
+                text-align:center;
+                margin-top:4px;
+                font-family:helvetica; 
+                font-style:normal; 
+                color:#000000;
+                line-height:10pt;
+            }
+            
+.tidytext   {
+                position:absolute;
+                margin-top:4px;
+                margin-left:12px;
+                font-family:helvetica; 
+                font-style:normal; 
+                color:#000000;
+                line-height:10pt;
+                font-size:10pt;
+            }
+            
+.tdtext   {
+                position:absolute;
+                width: 160px;
+                margin-top:2px;
+                font-family:helvetica; 
+                color: grey;
+                font-style:normal; 
+                line-height:14pt;
+                font-size:10pt;
+                text-align: center;
+                border-style:solid;
+                border-width:2px;
+                border-color: grey;
+                display: block;
+                margin-bottom:2px;
+            }
+
+.footerTextLeft   {
+                margin-top:10px;
+                margin-left:10px;
+                font-family:helvetica; 
+                font-style:normal; 
+                color:#000000;
+                line-height:10pt;
+                font-size:10pt;
+            }
+            
+.footerTextRight   {
+                margin-top:10px;
+                margin-right:10px;
+                font-family:helvetica; 
+                font-style:normal; 
+                color:#000000;
+                line-height:10pt;
+                font-size:10pt;
+            }
+
+.brandSpeak   {
+                vertical-align:text-top;
+                text-align:center;
+                font-family:helvetica; 
+                font-style:normal;
+                font-size:48pt;
+                color:DarkSlateGrey;
+                line-height:0px;
+            }
+
+.titleLine  {
+                background-color:Crimson;
+                position:abslute;
+                border:1px solid;
+                z-index:12;                
+            }
+      
+
+#links      {
+                background-color:white;
+                position:fixed;
+                top:0px;
+                right:0px;
+                width:200px;
+                height:100px;
+                z-index:6;
+            }
+
+#slogan      {
+                background-color:white;
+                position:fixed;
+                top:100px;
+                left:0px;
+                width:200px;
+                height:20px;
+                border:2px solid;
+                border-color:Crimson;
+                border-left-width:0px;
+                border-bottom-width:0px;
+                font-size:12px;
+                z-index:9;
+                
+            }
+
+#graph      {
+                background-color:Crimson;
+                position:fixed;
+                top:100px;
+                left:200px;
+                width:100%;
+                height:0px;
+                border:1px solid;
+                border-color:Crimson;
+                z-index:12;
+            }
+
+#statement  {
+                background-color:white;
+                position:fixed;
+                top:100px;
+                left:200px;
+                width:100%;
+                height:20px;
+                border:2px solid;
+                border-right-width:0px;
+                border-top-width:0px;
+                border-color:Crimson;
+                font-size:12px;
+                z-index:8;
+
+            }
+
+
+.buttonStyle {
+	background-color:#ffffff;
+	border-style:solid;
+	border-color:Chocolate;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-bottom-width:0px;
+	display:inline-block;
+	color:MidnightBlue;
+	font-family:arial;
+	font-size:14px;
+	padding:5px 15px;
+	text-decoration:none;
+	margin-right:10px;
+	margin-bottom:0px;
+	margin-left:0px;
+}
+
+.buttonStyle:hover {
+	background-color:#e8e8e8;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-bottom-width:0px;
+}
+.buttonStyle:active {
+	position:relative;
+	background-color:#c9c9c9;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	border-bottom-width:0px;
+}
